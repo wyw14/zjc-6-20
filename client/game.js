@@ -149,12 +149,14 @@ function checkMatch() {
       matchedPairs++;
       matchedEl.textContent = `${matchedPairs}/8`;
       flippedCards = [];
-      isProcessing = false;
       
-      if (matchedPairs === 8) {
-        endGame();
-      }
-    }, 500);
+      setTimeout(() => {
+        isProcessing = false;
+        if (matchedPairs === 8) {
+          endGame();
+        }
+      }, 600);
+    }, 400);
   } else {
     setTimeout(() => {
       unflipCard(card1);
